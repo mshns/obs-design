@@ -1,0 +1,77 @@
+:root {
+  --primary-color: rgb(221, 109, 0);
+  --secondary-color: rgb(68, 68, 68);
+  --highlight-color: rgb(0, 217, 255);
+  --primary-text-color: rgb(255, 255, 255);
+  --secondary-text-color: rgb(255, 255, 255, 0.9);
+  --success-color: rgb(0, 128, 0);
+  --error-color: rgb(235, 34, 39);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Play', serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+
+  background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+
+  clip-path: polygon(
+    1453px 0,
+    0 0,
+    0 56px,
+    1447px 56px,
+    1447px 1080px,
+    1920px 1080px,
+
+    1920px 585px,
+    1458px 585px,
+    1458px 545px,
+    1909px 545px,
+    1909px 585px,
+    1920px 585px,
+
+    1920px 350px,
+    1453px 350px
+  );
+
+  animation: gradient 6s ease-in-out infinite;
+}
+
+header {
+  position: absolute;
+  width: 1427px;
+  height: 36px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
