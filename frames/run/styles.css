@@ -25,7 +25,12 @@ main {
   width: 1920px;
   height: 1080px;
 
-  background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(
+    45deg,
+    var(--highlight-color),
+    var(--secondary-color),
+    black
+  );
   background-size: 400% 400%;
 
   clip-path: polygon(
@@ -61,7 +66,7 @@ main {
     1453px 350px
   );
 
-  animation: gradient 20s ease-in-out infinite;
+  animation: gradient 10s ease-in-out infinite;
 }
 
 @keyframes gradient {
@@ -93,7 +98,7 @@ header {
   font-size: 32px;
   font-weight: 700;
   color: var(--primary-text-color);
-  background-color: var(--highlight-color);
+  background-color: var(--primary-color);
   transform: skew(-10deg);
   white-space: nowrap;
 }
