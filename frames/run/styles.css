@@ -61,7 +61,7 @@ main {
     1453px 350px
   );
 
-  animation: gradient 6s ease-in-out infinite;
+  animation: gradient 20s ease-in-out infinite;
 }
 
 @keyframes gradient {
@@ -111,7 +111,7 @@ header {
   display: flex;
   white-space: nowrap;
   overflow: hidden;
-  animation: blind ease-in-out 20s infinite;
+  width: 0; /* Начальное состояние */
 }
 
 .subtitle-list::after {
@@ -168,7 +168,7 @@ header {
 .progress {
   position: relative;
   text-align: center;
-  width: 300px;
+  width: 250px;
   margin-right: 10px;
   border-radius: 5px;
   background-color: var(--primary-color);
@@ -178,18 +178,20 @@ header {
 .progress::before {
   position: absolute;
   content: '';
-  width: 50%;
+  width: 25%;
   height: 100%;
   left: 0;
   top: 0;
   background-color: var(--success-color);
   animation: flashing ease-in-out 1s infinite;
-  z-index: 1; /* Слой псевдоэлемента */
+  z-index: 1;
 }
+
 .progress span {
   position: relative;
-  z-index: 2; /* Слой текста поверх псевдоэлемента */
+  z-index: 2;
 }
+
 @keyframes blind {
   0% {
     width: 0;
