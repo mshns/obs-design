@@ -8,10 +8,6 @@
   --error-color: rgb(235, 34, 39);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
   font-family: 'Play', serif;
@@ -40,28 +36,32 @@ main {
     1447px 1080px,
     1920px 1080px,
 
-    1920px 585px,
-    1458px 585px,
-    1458px 545px,
-    1909px 545px,
-    1909px 585px,
-    1920px 585px,
+    1920px 668px,
+    1453px 668px,
+    1453px 618px,
+    1914px 618px,
+    1914px 668px,
+    1920px 668px,
+
+    1920px 612px,
+    1453px 612px,
+    1453px 562px,
+    1914px 562px,
+    1914px 612px,
+    1920px 612px,
+
+    1920px 556px,
+    1453px 556px,
+    1453px 356px,
+    1914px 356px,
+    1914px 556px,
+    1920px 556px,
 
     1920px 350px,
     1453px 350px
   );
 
   animation: gradient 6s ease-in-out infinite;
-}
-
-header {
-  position: absolute;
-  width: 1427px;
-  height: 36px;
-  padding: 10px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 @keyframes gradient {
@@ -74,4 +74,155 @@ header {
   100% {
     background-position: 0% 50%;
   }
+}
+
+header {
+  position: absolute;
+  width: 1427px;
+  height: 36px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title {
+  padding: 0 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  background-color: var(--highlight-color);
+  transform: skew(-10deg);
+  white-space: nowrap;
+}
+
+.subtitle-list {
+  position: relative;
+  height: 36px;
+  padding: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--primary-text-color);
+  background-color: var(--secondary-color);
+  transform: skew(-10deg);
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blind ease-in-out 20s infinite;
+}
+
+.subtitle-list::after {
+  position: absolute;
+  content: '';
+  height: 50px;
+  right: 10px;
+  top: 3px;
+  border-left: 6px solid var(--highlight-color);
+  animation: flashing ease-in-out 1s infinite;
+}
+
+.subtitle-item {
+  height: 100%;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: var(--secondary-text);
+  display: none;
+}
+
+.subtitle-item.visible {
+  display: flex;
+  align-items: center;
+}
+
+.highlight {
+  padding: 0 10px;
+  margin: 0 10px;
+  background-color: var(--highlight-color);
+  border-radius: 5px;
+}
+
+.plate-title {
+  padding: 0 20px 0 10px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.plate-subtitle {
+  padding: 5px 10px;
+  margin-left: -10px;
+  background-color: var(--success-color);
+  border-radius: 5px;
+}
+
+.plate-subtitle:not(:last-child) {
+  margin-right: 10px;
+}
+
+.plate-subtitle.error {
+  background-color: var(--error-color);
+}
+
+.progress {
+  position: relative;
+  text-align: center;
+  width: 300px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  overflow: hidden;
+}
+
+.progress::before {
+  position: absolute;
+  content: '';
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--success-color);
+  animation: flashing ease-in-out 1s infinite;
+  z-index: 1; /* Слой псевдоэлемента */
+}
+.progress span {
+  position: relative;
+  z-index: 2; /* Слой текста поверх псевдоэлемента */
+}
+@keyframes blind {
+  0% {
+    width: 0;
+  }
+  5% {
+    width: 100%;
+  }
+  90% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.chat {
+  position: absolute;
+  left: 1453px;
+  top: 674px;
+  width: 467px;
+  height: 406px;
+  background-color: var(--secondary-color);
+  opacity: 0.75;
 }
