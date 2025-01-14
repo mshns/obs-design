@@ -20,7 +20,7 @@ body {
   overflow: hidden;
 }
 
-main {
+.frame {
   position: relative;
   width: 1920px;
   height: 1080px;
@@ -44,22 +44,19 @@ main {
     1920px 668px,
     1453px 668px,
     1453px 618px,
-    1914px 618px,
-    1914px 668px,
+    1920px 618px,
     1920px 668px,
 
     1920px 612px,
     1453px 612px,
     1453px 562px,
-    1914px 562px,
-    1914px 612px,
+    1920px 562px,
     1920px 612px,
 
     1920px 556px,
     1453px 556px,
     1453px 356px,
-    1914px 356px,
-    1914px 556px,
+    1920px 356px,
     1920px 556px,
 
     1920px 350px,
@@ -119,7 +116,7 @@ header {
   width: 0; /* Начальное состояние */
 }
 
-.subtitle-list::after {
+.subtitle-list::before {
   position: absolute;
   content: '';
   height: 50px;
@@ -183,7 +180,7 @@ header {
 .progress::before {
   position: absolute;
   content: '';
-  width: 25%;
+  width: 1%;
   height: 100%;
   left: 0;
   top: 0;
@@ -224,6 +221,60 @@ header {
   }
 }
 
+.camera {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 1453px;
+  top: 0;
+  width: 427px;
+  height: 56px;
+  padding: 0 20px;
+  transform: skew(-10deg);
+}
+
+.camera-widget {
+  font-size: 24px;
+  color: var(--primary-text-color);
+}
+
+.widget-title {
+  padding: 0 10px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.widget-subtitle {
+  padding: 5px 10px;
+  margin-left: -10px;
+  background-color: var(--success-color);
+  border-radius: 5px;
+}
+
+.fundraising,
+.donors {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 1920px;
+  top: 562px;
+  width: 467px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+  animation: shift-right ease-in-out 60s infinite;
+}
+
+.donors {
+  top: 618px;
+  animation-delay: 6s;
+}
+
 .chat {
   position: absolute;
   left: 1453px;
@@ -231,5 +282,25 @@ header {
   width: 467px;
   height: 406px;
   background-color: var(--secondary-color);
-  opacity: 0.75;
+}
+
+@keyframes shift-right {
+  0% {
+    left: 1920px;
+  }
+  44% {
+    left: 1920px;
+  }
+  45% {
+    left: 1453px;
+  }
+  55% {
+    left: 1453px;
+  }
+  57% {
+    left: 1920px;
+  }
+  100% {
+    left: 1920px;
+  }
 }
