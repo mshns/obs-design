@@ -177,16 +177,18 @@ header {
   overflow: hidden;
 }
 
-.progress::before {
+.progress-bar {
   position: absolute;
-  content: '';
-  width: 1%;
   height: 100%;
   left: 0;
   top: 0;
   background-color: var(--success-color);
   animation: flashing ease-in-out 1s infinite;
   z-index: 1;
+}
+
+.progress-bar.error {
+  background-color: var(--error-color);
 }
 
 .progress span {
@@ -214,7 +216,7 @@ header {
     opacity: 0.5;
   }
   50% {
-    opacity: 0.8;
+    opacity: 1;
   }
   100% {
     opacity: 0.5;
@@ -248,7 +250,7 @@ header {
 .widget-subtitle {
   padding: 5px 10px;
   margin-left: -10px;
-  background-color: var(--success-color);
+  background-color: var(--secondary-color);
   border-radius: 5px;
 }
 

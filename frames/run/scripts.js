@@ -1,3 +1,30 @@
+import data from './data.json' with { type: 'json' };
+
+const day = document.getElementById('day');
+const profit = document.getElementById('profit');
+const progress = document.getElementById('progress');
+const progressBar = document.getElementById('progress-bar');
+const lastDayProfit = document.getElementById('last-day-profit');
+
+day.textContent = data.nextDay;
+
+profit.textContent = data.progress;
+if (data.progress[0] === '-') {
+  profit.classList.add('error');
+  progressBar.classList.add('error');
+}
+
+const progressCalc = Math.round(
+  parseFloat(data.progress.replace('€', '')) / 100
+);
+progress.textContent = 'Прогресс ' + progressCalc + '%';
+progressBar.style.width = Math.abs(progressCalc) + '%';
+
+lastDayProfit.textContent = data.lastDayProfit;
+if (data.lastDayProfit[0] === '-') {
+  lastDayProfit.classList.add('error');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const subtitleList = document.querySelector('.subtitle-list');
   const items = document.querySelectorAll('.subtitle-list .subtitle-item');
