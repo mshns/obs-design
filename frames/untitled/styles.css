@@ -10,7 +10,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Play', serif;
+  font-family: "Play", serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -118,7 +118,7 @@ header {
 
 .subtitle-list::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 50px;
   right: 10px;
   top: 3px;
@@ -165,35 +165,6 @@ header {
 
 .plate-subtitle.error {
   background-color: var(--error-color);
-}
-
-.progress {
-  position: relative;
-  text-align: center;
-  width: 250px;
-  margin-right: 10px;
-  border-radius: 5px;
-  background-color: var(--primary-color);
-  overflow: hidden;
-}
-
-.progress-bar {
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background-color: var(--success-color);
-  animation: flashing ease-in-out 1s infinite;
-  z-index: 1;
-}
-
-.progress-bar.error {
-  background-color: var(--error-color);
-}
-
-.progress span {
-  position: relative;
-  z-index: 2;
 }
 
 @keyframes blind {
