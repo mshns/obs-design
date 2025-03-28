@@ -10,7 +10,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Play', serif;
+  font-family: "Play", serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -118,7 +118,7 @@ header {
 
 .subtitle-list::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 50px;
   right: 10px;
   top: 3px;
@@ -254,13 +254,46 @@ header {
   border-radius: 5px;
 }
 
-.banner {
+.banner-widget {
   position: absolute;
   left: 1453px;
   top: 356px;
   width: 467px;
   height: 200px;
-  background-color: var(--secondary-color);
+  overflow: hidden;
+}
+
+.banner-slider {
+  width: 200%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  display: flex;
+}
+
+.banner-slide {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-title {
+  width: 100%;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+}
+
+.banner-href {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-text-color);
 }
 
 .fundraising,
@@ -313,5 +346,20 @@ header {
   }
   100% {
     left: 1920px;
+  }
+}
+
+@keyframes banner-animation {
+  0% {
+    display: none;
+  }
+  5% {
+    display: block;
+  }
+  95% {
+    display: block;
+  }
+  100% {
+    display: none;
   }
 }

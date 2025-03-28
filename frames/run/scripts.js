@@ -1,4 +1,5 @@
 import { data } from "./data.js";
+import { banner } from "./banner.js";
 
 const day = document.getElementById("day");
 const profit = document.getElementById("profit");
@@ -25,40 +26,62 @@ if (data.lastDayProfit[0] === "-") {
   lastDayProfit.classList.add("error");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const subtitleList = document.querySelector(".subtitle-list");
-  const items = document.querySelectorAll(".subtitle-list .subtitle-item");
-  let currentIndex = 0;
-  const transitionInDuration = 1000; // 1 секунда для расширения
-  const transitionOutDuration = 2000; // 2 секунды для сужения
-  const displayDuration = 17000; // 17 секунд для показа элемента
+const subtitleList = document.querySelector(".subtitle-list");
+const items = document.querySelectorAll(".subtitle-list .subtitle-item");
+let subtitletIndex = 0;
+items[subtitletIndex].classList.add("visible");
 
-  if (!subtitleList || items.length === 0) return;
+const bannerWidget = document.querySelector(".banner-widget");
+const bannerSlider = document.querySelector(".banner-slider");
+const bannerSliderList = document.querySelectorAll(".banner-slide");
+const bannerTitle = document.querySelector(".banner-title");
+const bannerHref = document.querySelector(".banner-href");
 
-  // Установить первый элемент как видимый
-  items[currentIndex].classList.add("visible");
+let bannerIndex = 0;
+const slideDuration = 5000; // 1 секунд для показа слайда баннера
 
-  function animate() {
-    // Расширение до 100%
-    subtitleList.style.transition = `width ${transitionInDuration}ms ease-in-out`;
-    subtitleList.style.width = "100%";
+function setBanner() {
+  bannerWidget.style.backgroundColor = banner[bannerIndex].color;
+  bannerTitle.innerHTML = banner[bannerIndex].title;
+  bannerHref.innerHTML = banner[bannerIndex].href;
+
+  setTimeout(() => {
+    bannerSlider.style.transition = `left 100ms ease-in-out`;
+    bannerSlider.style.left = "-100%";
     setTimeout(() => {
-      // Задержка на показ элемента
+      bannerSlider.style.left = "0";
+      bannerIndex = (bannerIndex + 1) % banner.length;
+      setBanner();
+    }, slideDuration);
+  }, slideDuration);
+}
+
+setBanner();
+
+const transitionInDuration = 1000; // 1 секунда для расширения
+const transitionOutDuration = 2000; // 2 секунды для сужения
+const displayDuration = 17000; // 17 секунд для показа элемента
+
+function animate() {
+  // Расширение до 100%
+  subtitleList.style.transition = `width ${transitionInDuration}ms ease-in-out`;
+  subtitleList.style.width = "100%";
+  setTimeout(() => {
+    // Задержка на показ элемента
+    setTimeout(() => {
+      // Сужение до 0%
+      subtitleList.style.transition = `width ${transitionOutDuration}ms ease-in-out`;
+      subtitleList.style.width = "0%";
+      // После завершения анимации переключаем элемент
       setTimeout(() => {
-        // Сужение до 0%
-        subtitleList.style.transition = `width ${transitionOutDuration}ms ease-in-out`;
-        subtitleList.style.width = "0%";
-        // После завершения анимации переключаем элемент
-        setTimeout(() => {
-          items[currentIndex].classList.remove("visible");
-          currentIndex = (currentIndex + 1) % items.length;
-          items[currentIndex].classList.add("visible");
-          // Перезапуск анимации
-          animate();
-        }, transitionOutDuration);
-      }, displayDuration);
-    }, transitionInDuration);
-  }
-  // Запуск анимации
-  animate();
-});
+        items[subtitletIndex].classList.remove("visible");
+        subtitletIndex = (subtitletIndex + 1) % items.length;
+        items[subtitletIndex].classList.add("visible");
+        // Перезапуск анимации
+        animate();
+      }, transitionOutDuration);
+    }, displayDuration);
+  }, transitionInDuration);
+}
+
+animate();

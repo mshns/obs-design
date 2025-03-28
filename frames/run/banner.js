@@ -1,72 +1,81 @@
 export const banner = [
   {
     icon: "url(./icons/redstar-logo.png)",
-    title: "Рейкбэк до 35%<br />и другие бонусы<br />на RedStar",
+    title: "Рейкбек до 60%<br />и другие бонусы<br />на RedStar",
     url: "https://storo08.ru/redstar",
     href: "storo08.ru/redstar",
-    command: "!redstar"
+    command: "!redstar",
+    color: "rgb(255, 0, 0)",
   },
   {
     icon: "url(./icons/chequered-flag.png)",
     title: "Twister Races<br />Приватная гонка<br />на RedStar",
     url: "https://storo08.ru/redstar",
     href: "storo08.ru/twister-races",
-    command: "!гонка"
+    command: "!гонка",
+    color: "rgb(50, 148, 55)",
   },
   {
     icon: "url(./icons/joker.png)",
     title: "HU Challenge<br />Фрироллы по пятницам<br />на RedStar",
     url: "https://storo08.ru/redstar",
     href: "storo08.ru/r/freeroll",
-    command: "!challenge"
+    command: "!challenge",
+    color: "rgb(51, 115, 145)",
   },
   {
     icon: "url(./icons/admission-tickets.png)",
     title: "От 3 до 10 тикетов<br />за активную игру на<br />микролимитах",
     url: "https://storo08.ru/redstar",
     href: "storo08.ru/r/challenge",
-    command: "!гонка"
+    command: "!гонка",
+    color: "rgb(189, 59, 102)",
   },
   {
     icon: "url(./icons/vigorish-logo.png)",
     title: "Читай мой<br />покерный блог<br />на Vigorish",
     url: "https://storo08.ru/redstar",
     href: "vigorish.ru",
-    command: "!vigo"
+    command: "!vigo",
+    color: "rgb(139, 132, 25)",
   },
   {
     icon: "url(./icons/gipsyteam-logo.png)",
     title: "Читай мой<br />покерный блог<br />на GipsyTeam",
     url: "https://storo08.ru/redstar",
     href: "forum.gipsyteam.ru/storo08",
-    command: "!gipsy"
+    command: "!gipsy",
   },
   {
     icon: "url(./icons/twitch-logo.png)",
     title: "Подписывайся<br />на мой канал<br />на Твиче",
     url: "https://storo08.ru/redstar",
     href: "twitch.tv/storo08",
-    command: "!твич"
+    command: "!твич",
+    color: "rgb(17, 206, 32)",
   },
   {
     icon: "url(./icons/youtube-logo.png)",
     title: "Подписывайся<br />на мой канал<br />на Ютубе",
     url: "https://storo08.ru/redstar",
     href: "youtube.com/storo08stream",
-    command: "!ютуб"
+    command: "!ютуб",
+    color: "rgb(202, 43, 43)",
   },
   {
     icon: "url(./icons/telegram-logo.png)",
     title: "Подписывайся<br />на мой канал<br />в Телеграме",
     url: "https://storo08.ru/redstar",
     href: "t.me/storo08",
-    command: "!телега"
+    command: "!телега",
+    color: "rgb(27, 147, 202)",
   },
   {
     icon: "url(./icons/vk-logo.png)",
     title: "Подписывайся<br />на мою группу<br />ВКонтакте",
     url: "https://storo08.ru/redstar",
     href: "vk.com/storo08",
-    command: "!вк"
-  }
-]
+    command: "!вк",
+    color: "rgb(20, 174, 245)",
+  },
+];
