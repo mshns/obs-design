@@ -1,5 +1,4 @@
-const response = await fetch("../run/data.json");
-const data = await response.json();
+import { data } from "../run/data.js";
 
 const sliderElement = document.querySelector(".slider");
 const soonElement = document.querySelector(".soon");

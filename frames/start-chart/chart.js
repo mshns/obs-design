@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const response = await fetch("../run/data.json");
-  const data = await response.json();
+import { data } from "../run/data.js";
+
+document.addEventListener("DOMContentLoaded", () => {
   const labels = data.chart.map((_, index) => index + 1);
   const ctx = document.getElementById("myChart");
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       responsive: true,
       maintainAspectRatio: false,
       layout: {
-        padding: 20
+        padding: 20,
       },
 
       scales: {
@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", async () => {
           align: "top",
         },
       },
-      
     },
     plugins: [ChartDataLabels],
   });

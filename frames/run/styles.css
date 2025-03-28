@@ -254,6 +254,15 @@ header {
   border-radius: 5px;
 }
 
+.banner {
+  position: absolute;
+  left: 1453px;
+  top: 356px;
+  width: 467px;
+  height: 200px;
+  background-color: var(--secondary-color);
+}
+
 .fundraising,
 .donors {
   position: absolute;
