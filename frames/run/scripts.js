@@ -5,6 +5,10 @@ const profit = document.getElementById("profit");
 const progress = document.getElementById("progress");
 const progressBar = document.getElementById("progress-bar");
 const lastDayProfit = document.getElementById("last-day-profit");
+const bestDay = document.getElementById("best-day");
+const bestDayProfit = document.getElementById("best-day-profit");
+const worstDay = document.getElementById("worst-day");
+const worstDayProfit = document.getElementById("worst-day-profit");
 
 day.textContent = data.nextDay;
 
@@ -24,6 +28,20 @@ lastDayProfit.textContent = data.lastDayProfit;
 if (data.lastDayProfit[0] === "-") {
   lastDayProfit.classList.add("error");
 }
+
+const dailyChanges = data.chart.map((value, index) => {
+  return index === 0 ? value : value - data.chart[index - 1];
+});
+
+const bestDayValue = Math.max(...dailyChanges);
+const worstDayValue = Math.min(...dailyChanges);
+const bestDayIndex = dailyChanges.indexOf(bestDayValue) + 1;
+const worstDayIndex = dailyChanges.indexOf(worstDayValue) + 1;
+
+bestDay.textContent = bestDayIndex;
+bestDayProfit.textContent = `+€${bestDayValue}`;
+worstDay.textContent = worstDayIndex;
+worstDayProfit.textContent = `-€${Math.abs(worstDayValue)}`;
 
 document.addEventListener("DOMContentLoaded", () => {
   const subtitleList = document.querySelector(".subtitle-list");
